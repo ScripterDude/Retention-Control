@@ -1,0 +1,8 @@
+namespace App2
+{
+    [default_interface]
+    runtimeclass RulesPage : Microsoft.UI.Xaml.Controls.Page
+    {
+        RulesPage();
+    }
+}

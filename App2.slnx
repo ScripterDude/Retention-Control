@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="App2/App2.vcxproj" Id="aee831e4-3ff3-4c1c-8287-f55f4dbf508c">
+    <Deploy />
+  </Project>
+</Solution>

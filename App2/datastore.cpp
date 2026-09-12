@@ -1,10 +1,11 @@
-#include "fileexpiry.h"
 
+#include "pch.h"
+#include "RetentionControl.h"
 #include <iostream>
 #include <filesystem>
 #include <fstream>
 
-//Checks if a previous setup exists (Settings folder and config file)
+//checks if a previous setup exists (Settings folder and config file)
 bool setupExists(std::string fullpath){
     return std::filesystem::is_directory(fullpath) &&
            std::filesystem::is_regular_file(
@@ -12,7 +13,7 @@ bool setupExists(std::string fullpath){
            );
 }
 
-//Checks if the path of an given rule exists.
+//checks if the path of an given rule exists.
 bool validateRulePath(std::string rule_path){
     if(std::filesystem::is_directory(rule_path)){
        return true; 
@@ -22,7 +23,7 @@ bool validateRulePath(std::string rule_path){
     }
 }
 
-// Checks config file for invalid data, and handles potential corrupted data.
+//checks config file for invalid data, and handles potential corrupted data.
 bool validateDatastore(std::string fullpath){
     std::ifstream file(std::filesystem::path(fullpath) / "set.conf");
     
@@ -43,11 +44,11 @@ bool validateDatastore(std::string fullpath){
         if (path.empty() || expiration < 0 || filetype.empty()) {
             std::cout << "WARNING: Corrupted rule data detected. Removing [RULE "
                     << i << "]" << std::endl;
-            removeRule(fullpath,i);
+            removeRule("test");
         }
         if(!validateRulePath(path)){
             std::cout << "WARNING: Invalid rule path detected. Removing [RULE  " << i <<"]"<< std::endl;
-            removeRule(fullpath,i);
+            removeRule("test");
             had_corrupion = true;
         }
     }
@@ -72,7 +73,6 @@ int setup(std::string fullpath, bool corrupted){
     std::ofstream file(std::filesystem::path(fullpath) / "set.conf");
     std::cout << "--New configuration file generated" << std::endl;
     file.close();
-    //std::cin <<
     return 0;
 }
 

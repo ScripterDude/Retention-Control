@@ -1,0 +1,182 @@
+<Page
+    x:Class="App2.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer>
+        <StackPanel
+            Padding="20"
+            Spacing="20">
+
+            <!-- OVERVIEW-->
+
+            <TextBlock
+                Text="Overview"
+                FontSize="15"
+                FontWeight="SemiBold"/>
+
+            <!-- Stats -->
+            <Grid ColumnSpacing="12">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Files removed  -->
+                <Border
+                    Grid.Column="0"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="16">
+
+                    <StackPanel Spacing="6">
+
+                        <TextBlock
+                            Text="Files removed"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                        <TextBlock
+                            x:Name="RemovedFilesCountText"
+                            Text="0"
+                            FontSize="28"
+                            FontWeight="SemiBold"/>
+
+                    </StackPanel>
+
+                </Border>
+
+                <!-- Active rules -->
+                <Border
+                    Grid.Column="1"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="16">
+
+                    <StackPanel Spacing="6">
+
+                        <TextBlock
+                            Text="Active rules"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                        <TextBlock
+                            x:Name="ActiveRulesCountText"
+                            Text="0"
+                            FontSize="28"
+                            FontWeight="SemiBold"/>
+
+                    </StackPanel>
+
+                </Border>
+
+            </Grid>
+
+            <!-- ABOUT -->
+
+            <TextBlock
+                Text="About"
+                FontSize="15"
+                FontWeight="SemiBold"
+                Margin="0,8,0,0"/>
+
+            <Border
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="16">
+
+                <StackPanel Spacing="4">
+
+                    <TextBlock
+                        Text="Retention Control"
+                        FontWeight="SemiBold"/>
+
+                    <TextBlock
+                        Text="Automatically removes expired files based on the folder rules you configure."
+                        TextWrapping="Wrap"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- LINKS -->
+
+            <Grid ColumnSpacing="12">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Contact -->
+                <Border
+                    Grid.Column="0"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="16">
+
+                    <StackPanel Spacing="4">
+
+                        <TextBlock
+                            Text="Contact"
+                            FontWeight="SemiBold"/>
+
+                        <TextBlock
+                            Text="For inquiries, please contact me at:"
+                            TextWrapping="Wrap"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                        <HyperlinkButton
+                            Content="LinkedIn"
+                            Padding="0,4,0,0"
+                            HorizontalAlignment="Left"
+                            NavigateUri="https://www.linkedin.com/in/alexander-o-20a243262/"/>
+
+                    </StackPanel>
+
+                </Border>
+
+                <!-- Repository -->
+                <Border
+                    Grid.Column="1"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="16">
+
+                    <StackPanel Spacing="4">
+
+                        <TextBlock
+                            Text="Project Repository"
+                            FontWeight="SemiBold"/>
+
+                        <TextBlock
+                            Text="View the source code and project information."
+                            TextWrapping="Wrap"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                        <HyperlinkButton
+                            Content="Open repository"
+                            Padding="0,4,0,0"
+                            HorizontalAlignment="Left"
+                            NavigateUri="https://github.com/"/>
+
+                    </StackPanel>
+
+                </Border>
+
+            </Grid>
+
+        </StackPanel>
+    </ScrollViewer>
+
+</Page>

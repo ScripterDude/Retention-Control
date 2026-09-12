@@ -1,16 +1,17 @@
-#include "fileexpiry.h"
+#include "pch.h"
+#include "RetentionControl.h"
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
 
-#define TOOL_NAME "FileExpiry"
+#define TOOL_NAME "Retention Control"
 
 
-int main(void){
+int start(void){
     std::cout << "Starting up "<<TOOL_NAME<< std::endl;
     //method to get appdata without active username
-    std::string fullpath = std::string(std::getenv("APPDATA")) + "\\" + TOOL_NAME;
+    std::string fullpath = std::string(std::getenv("APPDATA")) + "\\" + TOOL_NAME; //std::string(std::getenv("APPDATA")) + "\\" +"Retention Control"
 
     if (setupExists(fullpath)){ 
         std::cout << "Found existing setup" << std::endl;
@@ -26,10 +27,11 @@ int main(void){
     }else{
         std::cout << "No optimal previous setup found - Creating a new" << std::endl;
         int setupStatus = setup(fullpath, 1);
+        std::cout << setupStatus << std::endl;
     }
 
     //setup validated terminal ready
-    std::cout << "FileExpiry is ready. Write help for commands.\n";
+    std::cout << "Retention Control is ready. Write help for commands.\n";
     while (1) {
         std::string userinput = "null";
 
@@ -43,13 +45,13 @@ int main(void){
             ;
         }
         else if (userinput == "list") {
-            listRules(fullpath);
+            listRules();
         }
         else if (userinput == "add") {
-            addRule(fullpath);
+            //addRule(fullpath);
         }
         else if (userinput == "remove") {
-            removeRule(fullpath);
+            removeRule("test");
         }
         else {
             std::cout << "Unknown command\n";

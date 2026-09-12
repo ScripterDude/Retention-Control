@@ -1,0 +1,55 @@
+# Visual Studio user/cache files
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.VC.opendb
+*.opendb
+
+# Build output
+x64/
+x86/
+ARM64/
+Debug/
+Release/
+bin/
+obj/
+
+# Generated WinUI / C++ files
+Generated Files/
+GeneratedFiles/
+*.g.h
+*.g.cpp
+*.winmd
+*.pdb
+*.ilk
+*.tlog
+*.lastbuildstate
+*.aps
+
+# NuGet restored packages
+packages/
+
+# MSIX / packaging output
+AppPackages/
+BundleArtifacts/
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+*.msixupload
+
+# Test/temp output
+TestResults/
+*.log
+*.tmp
+*.temp
+
+# Windows junk
+Thumbs.db
+Desktop.ini
+
+# Private signing certificates / keys
+*.pfx
+*.p12
+*.key
